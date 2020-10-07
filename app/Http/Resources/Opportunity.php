@@ -2,10 +2,9 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Lookups\Category;
 use App\Http\Resources\Lookups\Country;
-use App\Http\Resources\User;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class Opportunity extends JsonResource
 {
@@ -25,6 +24,7 @@ class Opportunity extends JsonResource
             'deadline' => $this->deadline->toDayDateTimeString(),
             'createdBy' => new User($this->user),
             'organizer' => $this->organizer,
+            'opportunityDetail' => new OpportunityDetail($this->detail),
             'createdAt' => $this->created_at->toDateTimeString(),
             'updatedAt' => $this->updated_at->toDateTimeString(),
         ];

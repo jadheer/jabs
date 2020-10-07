@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Lookups;
+namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Country extends JsonResource
+class Favorite extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,11 +15,8 @@ class Country extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'phoneCode' => $this->phone_code,
-            'countryCode' => $this->country_code
-
+            'user' => new User($this->user),
+            'opportunity' => new Opportunity($this->opportunity)
         ];
     }
 }
