@@ -56,6 +56,9 @@ class AuthController extends Controller
              $user = $request->user();
              return  $this->getResponse($user);
         }
+        else{
+            return response('Invalid credentials',401);
+        }
 
     }
 
