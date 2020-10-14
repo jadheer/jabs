@@ -19,8 +19,8 @@ class OpportunityDetail extends JsonResource
             'applicationProcess' => $this->application_process,
             'furtherQueries' => $this->further_queries,
             'eligibilities' => $this->eligibilities,
-            'startDate' => $this->start_date->toDateTimeString(),
-            'endDate' => $this->end_date->toDateTimeString(),
+            'startDate' => $this->start_date->toDayDateTimeString(),
+            'endDate' => $this->end_date->toDayDateTimeString(),
             'officialLink' => $this->official_link,
             'eligibleRegions' => $this->eligible_regions
         ];
