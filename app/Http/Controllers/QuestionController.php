@@ -17,6 +17,7 @@ class QuestionController extends Controller
     public function index()
     {
         return new QuestionCollection(Question::paginate(10));
+        // return Question::all();
     }
 
 
